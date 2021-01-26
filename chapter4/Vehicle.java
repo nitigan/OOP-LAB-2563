@@ -27,6 +27,7 @@ public class Vehicle
         System.out.println("Within passByValue(..): i+=1="+i);
         v.mpg +=1; //You can modify the data within the object, which will be passed back
         System.out.println("Inside passByValue(..) method, change the original object data,v.mpg+=1="+v.mpg);
+        
         //Instantiate a new Vehicle object
         System.out.println("Within passByValue(..): instantiating a new object, vehicle");
         Vehicle vehicle = new Vehicle();
@@ -34,6 +35,7 @@ public class Vehicle
         vehicle.mpg = 50;
         vehicle.fuelcap = 20;
         v = vehicle;//inside the method, the parameter v is now point to vehicle
+        
         //however, argument of the caller will not change its reference
         //to the new object.
         System.out.println("\nInside Method passByValue(..): After v=vehicle, parameter v is pointing to new object vehicle");
@@ -51,19 +53,23 @@ public class Vehicle
         System.out.println("Access class method using dot operator:");
         int range1 = Vehicle.calcRange(18,33);
         System.out.println("Vehicle.calcRange(18,33)="+range1);
+
         //Object instantiation
         //create a new object through operator new, which will allocate a
         //block of memory. Also assemble the object in the allocated
         //memory space using a constructor.
         System.out.println("\nInstantiate minivan object");
         Vehicle minivan = new Vehicle();
+
         minivan.passengers = 7; //set the variable value
         minivan.fuelcap = 16;
         minivan.mpg = 21;
+
         //compute the range assuming a full tank of gas
         System.out.println("\naccess minivan's instance variables and calculate range");
         int range = minivan.fuelcap * minivan.mpg;
         System.out.println("Minivan can carry " + minivan.passengers + " passengers with a range of " + range + " miles.");
+        
         //Instantiate a second Vehicle object
         System.out.println("\nInstantiate a second vehicle object");
         Vehicle sedan = new Vehicle();//create a second object
@@ -72,6 +78,7 @@ public class Vehicle
         sedan.mpg = 35;
         range = sedan.fuelcap * sedan.mpg;
         System.out.println("Sedan can carry " + sedan.passengers + " passengers with a range of " + range + " miles.");
+        
         //Reference variable assignment
         System.out.println("\nReference variable assignment.");
         System.out.println("Creating a third object v");
@@ -80,6 +87,7 @@ public class Vehicle
         v.fuelcap=20;
         v.mpg = 12;
         v = minivan;//now v reference the memory block where minivan
+        
         //object reference to.
         //What will happen to the memory block v was
         //reference to? It will be garbage collected.
@@ -89,9 +97,11 @@ public class Vehicle
         System.out.println("v.passengers=minivan.passengers="+v.passengers);
         System.out.println("v.fuelcap=minivan.fuelcap="+v.fuelcap);
         System.out.println("v.mpg=minivan.mpg="+v.mpg);
+        
         //call instance method of the object minivan to calculate the range of minivan
         System.out.println("\nCalling minivan's method:");
         minivan.range();
+        
         //Java method call passes everything by VALUE
         System.out.println("\nJava method passes everything by value");
         System.out.println("Before calling the method, passByValue(..),");

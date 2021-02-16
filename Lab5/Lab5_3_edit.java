@@ -41,9 +41,9 @@ public class Lab5_3_edit {
     public int randomNumber(int sNum,int eNum){
         int ranNumber=0;
         //ranNumber =    1 + (int)( Math.random() * 100 );
-        //ranNumber =   20 + (int)( Math.random() * 100 ); // 20 ถึง 119;
+        //ranNumber =   20 + (int)( Math.random() * ((100-20)+1) ); // 20 ถึง 100;
         //sNum = 20 ; eNum = 100;
-        ranNumber = sNum + (int)( Math.random() * ((eNum-sNum)-1) ); 
+        ranNumber = sNum + (int)( Math.random() * ((eNum-sNum)+1) ); 
         return ranNumber;
     }
 }

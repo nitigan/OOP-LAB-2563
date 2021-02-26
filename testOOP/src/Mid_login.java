@@ -2,7 +2,7 @@ package testOOP.src;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class test2 {
+public class Mid_login {
     static String userArray[][],output="";
     static Scanner scan = new Scanner(System.in);
     static boolean chkUser=false,chkPass=false;

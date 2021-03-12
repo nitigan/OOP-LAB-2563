@@ -32,7 +32,7 @@ public Lab7_1() {
         new ActionListener() {
             public void actionPerformed( ActionEvent event )
             {
-                int number, sumValue, blankNum;
+                int number, blankNum;
                 String blank = " ";
                 number = Integer.parseInt( numberField.getText() );
                 blankNum = Integer.parseInt(blankField.getText() ); 

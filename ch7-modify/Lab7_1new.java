@@ -1,4 +1,4 @@
-package ch7;
+//package ch7-modify;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -20,6 +20,31 @@ public Lab7_1new() {
     // create numberField and attach it to content pane
     numberField = new JTextField( 10 );
     container.add( numberField );
+    numberField.addActionListener(
+        new ActionListener() {
+            public void actionPerformed( ActionEvent event )
+            {
+                int number , blankNum;
+                String blank = " ";
+                number = Integer.parseInt( numberField.getText());
+                blankNum = Integer.parseInt(blankField.getText());
+                for(int j=1 ; j<=blankNum ; j++){
+                    blank += " ";
+                }
+
+                // clear value in TextArea
+                resultArea.setText("");
+                // add data in textarea
+                for (int n = 1 ; n <= number ; n++) {
+                    resultArea.append( blank + Integer.toString(n));
+                    if (n % 5 == 0) resultArea.append("\n");
+                }
+                // clear value in numberField
+                numberField.setText("");
+                blankField.setText("");
+            } // end method actionPerformed
+        }
+    );
 
     blankLabel = new JLabel("Enter integer of Blank : ");
     container.add( blankLabel );
@@ -56,7 +81,7 @@ public Lab7_1new() {
     // create display
     resultArea = new JTextArea( 20,30 );
     resultArea.setEditable( false );
-    container.add( resultArea );
+    //container.add( resultArea );
     JScrollPane scrollPane = new JScrollPane(resultArea);
     scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

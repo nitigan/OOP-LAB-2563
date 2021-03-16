@@ -1,7 +1,9 @@
-
+package ch7;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.JScrollPane;  
+
 public class Lab7_1 extends JFrame{
 JLabel numberLabel, resultLabel,blankLabel;
 JTextField numberField,blankField;
@@ -54,7 +56,12 @@ public Lab7_1() {
     // create display
     resultArea = new JTextArea( 20,30 );
     resultArea.setEditable( false );
-    container.add( resultArea );
+    container.add(resultArea);
+    JScrollPane scrollPane = new JScrollPane(resultArea);
+    scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+    scrollPane.setHorizontalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+    container.add(scrollPane);
 }
     public static void main(String[] args) {
         Lab7_1 window = new Lab7_1();
